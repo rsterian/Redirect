@@ -406,13 +406,20 @@ if(show_arrow){
     show_debug_message("not launchable")
 }
 
-if(hovering){
+if(hovering){    
     grav = base_grav
     hovering = false
     
     dir = point_direction(x, y, mouse_x, mouse_y)
     //direction = dir
     //speed = 15
+    
+    inst = instance_nearest(x, y, obj_ball)
+    if(object_get_name(inst.object_index) == "obj_movable_ball"){
+        inst.direction = dir + 180
+        inst.speed = 3
+    }    
+    
     hsp = 13 * dcos(dir)
     vsp = -13 * dsin(dir)
     show_debug_message(dir)
