@@ -58,7 +58,7 @@ hovering = false //same as launchable
 //grav = 0.5
 
 show_arrow = false
-
+show_back_arrow = false
 </string>
           </argument>
         </arguments>
@@ -194,7 +194,35 @@ y += vsp;
     grav = 0
     
     show_arrow = true
-}
+    if(object_get_name(inst.object_index) == "obj_movable_ball"){
+        show_back_arrow = true
+    }
+    
+} else {
+    hovering = false
+    show_arrow = false
+    show_back_arrow = false
+    grav = base_grav
+    
+    while(place_meeting(x,y,obj_wall)){
+        if(!place_meeting(x + 8, y, obj_wall)){
+            x += 8
+            break
+        }
+        if(!place_meeting(x - 8, y, obj_wall)){
+            x -= 8
+            break
+        }
+        if(!place_meeting(x, y + 8, obj_wall)){
+            y += 8
+            break
+        }
+        if(!place_meeting(x, y - 8, obj_wall)){
+            y -= 8
+            break
+        }
+    }
+}   
 //show_debug_message("far")
 </string>
           </argument>
@@ -283,6 +311,20 @@ if(show_arrow){
     //credit to jirrev, posted 6/23/16
         
     //draw_arrow(x, y, mouse_x, mouse_y, 10)
+}
+
+if(show_back_arrow){
+    _maxDistance = 50    
+
+    _dir = 180 + point_direction(x, y, mouse_x, mouse_y)
+    //_dist = min(point_distance(x, y, mouse_x, mouse_y), _maxDistance);
+    _dist = 60
+    
+    draw_set_color(c_orange)
+    draw_arrow(x, y, x+(dcos(_dir)*_dist), y-(dsin(_dir)*_dist), 15);
+    draw_set_color(c_white)
+    //https://forum.yoyogames.com/index.php?threads/arrow-direction-and-length.560/
+    //credit to jirrev, posted 6/23/16
 }
 </string>
           </argument>
@@ -427,6 +469,7 @@ if(hovering){
     show_debug_message(vsp)
 }
 show_arrow = false
+show_back_arrow = false
 
 </string>
           </argument>

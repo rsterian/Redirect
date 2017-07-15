@@ -18,6 +18,7 @@
     <sprite>sprites\redball</sprite>
     <sprite>sprites\launcher</sprite>
     <sprite>sprites\orangeball</sprite>
+    <sprite>sprites\target</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\white_bg</background>
@@ -38,6 +39,7 @@
     <object>objects\obj_black</object>
     <object>objects\obj_launcher</object>
     <object>objects\obj_movable_ball</object>
+    <object>objects\obj_target</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
@@ -52,6 +54,8 @@
     <room>rooms\lvl8</room>
     <room>rooms\lvl9</room>
     <room>rooms\lvl10</room>
+    <room>rooms\lvl11</room>
+    <room>rooms\lvl12</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
