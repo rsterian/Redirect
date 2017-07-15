@@ -98,14 +98,16 @@ if(abs(hsp) &lt;= 0.1){
 }
 
 if(distance_to_object(obj_goal) &lt; 10){
-    hsp = 0
-    vsp = 0
-    show_debug_message("going to next room")
-    if(room_next(room) != -1){
-        room_goto(room_next(room))
-    } else {
-        game_end();
-    }    
+    if(instance_nearest(x, y, obj_goal).can_enter){
+        hsp = 0
+        vsp = 0
+        show_debug_message("going to next room")
+        if(room_next(room) != -1){
+            room_goto(room_next(room))
+        } else {
+            game_end();
+        }    
+    }
 }
 
 //vspeed += grav
@@ -204,23 +206,25 @@ y += vsp;
     show_back_arrow = false
     grav = base_grav
     
+    dist = 1
     while(place_meeting(x,y,obj_wall)){
-        if(!place_meeting(x + 8, y, obj_wall)){
-            x += 8
+        if(!place_meeting(x + dist, y, obj_wall)){
+            x += dist
             break
         }
-        if(!place_meeting(x - 8, y, obj_wall)){
-            x -= 8
+        if(!place_meeting(x - dist, y, obj_wall)){
+            x -= dist
             break
         }
-        if(!place_meeting(x, y + 8, obj_wall)){
-            y += 8
+        if(!place_meeting(x, y + dist, obj_wall)){
+            y += dist
             break
         }
-        if(!place_meeting(x, y - 8, obj_wall)){
-            y -= 8
+        if(!place_meeting(x, y - dist, obj_wall)){
+            y -= dist
             break
         }
+        dist++
     }
 }   
 //show_debug_message("far")

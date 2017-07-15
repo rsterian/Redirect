@@ -42,6 +42,7 @@
     <object>objects\obj_target</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\lvl14</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\lvl1</room>
@@ -49,13 +50,17 @@
     <room>rooms\lvl3</room>
     <room>rooms\lvl4</room>
     <room>rooms\lvl5</room>
+    <room>rooms\lvl5_5</room>
     <room>rooms\lvl6</room>
     <room>rooms\lvl7</room>
+    <room>rooms\lvl7_5</room>
+    <room>rooms\lvl7_5_1</room>
     <room>rooms\lvl8</room>
     <room>rooms\lvl9</room>
     <room>rooms\lvl10</room>
     <room>rooms\lvl11</room>
     <room>rooms\lvl12</room>
+    <room>rooms\lvl13</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -75,9 +75,6 @@
     <instance objName="obj_wall" x="832" y="672" name="inst_836A7736" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="816" y="672" name="inst_158CA8FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="800" y="672" name="inst_B0FE24D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="784" y="672" name="inst_41AE1C6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="768" y="672" name="inst_E69AC4EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="768" y="672" name="inst_C014A24B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blink_ball" x="624" y="640" name="inst_0CC673B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blink_ball" x="416" y="640" name="inst_80877DE1" locked="0" code="targetable = false&#xA;image_blend = c_lime&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
