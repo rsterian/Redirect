@@ -185,6 +185,11 @@ y += vsp;
             exit
         }
     }
+    
+    if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
+        inst.is_held = true
+    }
+    
     hovering = true
     in_air = true
     
@@ -465,6 +470,9 @@ if(hovering){
         inst.direction = dir + 180
         inst.speed = 3
     }    
+    if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
+        inst.is_held = false
+    }
     
     hsp = 13 * dcos(dir)
     vsp = -13 * dsin(dir)
