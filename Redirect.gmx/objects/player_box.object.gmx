@@ -186,7 +186,7 @@ y += vsp;
         }
     }
     
-    if(object_get_name(inst.object_index) == "obj_toggle_ball"){
+    /*if(object_get_name(inst.object_index) == "obj_toggle_ball"){
         if(!inst.on){
             show_debug_message("untargetable!")
             grav = base_grav
@@ -194,7 +194,7 @@ y += vsp;
             show_arrow = false
             exit
         }
-    }
+    }*/
             
     
     if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
@@ -374,6 +374,22 @@ if(show_back_arrow){
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="80">
+      <action>
+        <libid>1</libid>
+        <id>221</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_previous_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="9" enumb="78">
       <action>
         <libid>1</libid>
@@ -487,10 +503,10 @@ if(hovering){
     
     if(object_get_name(inst.object_index) == "obj_toggle_ball"){
         var i
-        for(i = 0; i &lt; instance_number(obj_toggle_ball); ++i){
+        /*for(i = 0; i &lt; instance_number(obj_toggle_ball); ++i){
             inst = instance_find(obj_toggle_ball, i)
             inst.on = !(inst.on)
-        } 
+        }*/
         
         //Toggling walls
         purple_walls = ds_list_create()
@@ -513,6 +529,27 @@ if(hovering){
         for(i = 0; i &lt; ds_list_size(outlines); ++i){
             with(ds_list_find_value(outlines, i)){
                 instance_change(obj_purple_wall, false)
+            }
+        }
+        //and Toggling balls
+        balls = ds_list_create()
+        olines = ds_list_create()
+        
+        for(i = 0; i &lt; instance_number(obj_toggle_ball); ++i){
+            ds_list_add(balls, instance_find(obj_toggle_ball, i))
+        }
+        for(i = 0; i &lt; instance_number(obj_toggle_ball_outline); ++i){
+            ds_list_add(olines, instance_find(obj_toggle_ball_outline, i))
+        }
+        
+        for(i = 0; i &lt; ds_list_size(balls); ++i){
+            with(ds_list_find_value(balls, i)){
+                instance_change(obj_toggle_ball_outline, false)
+            }
+        }
+        for(i = 0; i &lt; ds_list_size(olines); ++i){
+            with(ds_list_find_value(olines, i)){
+                instance_change(obj_toggle_ball, false)
             }
         }
         //Done toggling

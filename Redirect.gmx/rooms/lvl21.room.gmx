@@ -74,7 +74,6 @@
     <instance objName="obj_wall" x="144" y="672" name="inst_4910C9C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="176" y="672" name="inst_602C819F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_toggle_ball" x="144" y="624" name="inst_1C66B1A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_toggle_ball" x="384" y="608" name="inst_6D5162A4" locked="0" code="on = false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outline" x="208" y="672" name="inst_6117B959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outline" x="240" y="672" name="inst_2D08220E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outline" x="272" y="672" name="inst_321423F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -96,6 +95,7 @@
     <instance objName="obj_purple_wall" x="784" y="672" name="inst_311F2FA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_purple_wall" x="816" y="672" name="inst_8E0A8DDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_purple_wall" x="848" y="672" name="inst_DA62686F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toggle_ball_outline" x="384" y="608" name="inst_747CD838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
