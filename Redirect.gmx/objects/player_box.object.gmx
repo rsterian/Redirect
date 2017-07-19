@@ -186,6 +186,17 @@ y += vsp;
         }
     }
     
+    if(object_get_name(inst.object_index) == "obj_toggle_ball"){
+        if(!inst.on){
+            show_debug_message("untargetable!")
+            grav = base_grav
+            hovering = false
+            show_arrow = false
+            exit
+        }
+    }
+            
+    
     if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
         inst.is_held = true
     }
@@ -472,6 +483,40 @@ if(hovering){
     }    
     if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
         inst.is_held = false
+    }
+    
+    if(object_get_name(inst.object_index) == "obj_toggle_ball"){
+        var i
+        for(i = 0; i &lt; instance_number(obj_toggle_ball); ++i){
+            inst = instance_find(obj_toggle_ball, i)
+            inst.on = !(inst.on)
+        } 
+        
+        //Toggling walls
+        purple_walls = ds_list_create()
+        outlines = ds_list_create()
+        
+        for(i = 0; i &lt; instance_number(obj_purple_wall); ++i){
+            //purple_walls[i] = instance_find(obj_purple_wall, i)
+            ds_list_add(purple_walls, instance_find(obj_purple_wall, i))
+        }
+        for(i = 0; i &lt; instance_number(obj_wall_outline); ++i){
+            //outlines[i] = instance_find(obj_wall_outline, i)
+            ds_list_add(outlines, instance_find(obj_wall_outline, i))
+        }
+        
+        for(i = 0; i &lt; ds_list_size(purple_walls); ++i){
+            with(ds_list_find_value(purple_walls, i)){
+                instance_change(obj_wall_outline, false)
+            }
+        }
+        for(i = 0; i &lt; ds_list_size(outlines); ++i){
+            with(ds_list_find_value(outlines, i)){
+                instance_change(obj_purple_wall, false)
+            }
+        }
+        //Done toggling
+        
     }
     
     hsp = 13 * dcos(dir)

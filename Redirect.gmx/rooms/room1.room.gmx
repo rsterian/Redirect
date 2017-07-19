@@ -190,6 +190,10 @@
     <instance objName="obj_wall" x="32" y="128" name="inst_A841E76A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="128" name="inst_86EE93CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="96" y="128" name="inst_6CE30E62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toggle_ball" x="832" y="624" name="inst_07CC87E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_outline" x="896" y="592" name="inst_99011816" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_purple_wall" x="928" y="592" name="inst_5E0AA204" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toggle_ball" x="752" y="624" name="inst_FE646ABA" locked="0" code="on = false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="white_bg" x="992" y="672" w="32" h="32" xo="0" yo="0" id="10000033" name="inst_CB28E1B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

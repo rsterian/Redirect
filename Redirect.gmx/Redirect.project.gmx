@@ -19,6 +19,9 @@
     <sprite>sprites\launcher</sprite>
     <sprite>sprites\orangeball</sprite>
     <sprite>sprites\target</sprite>
+    <sprite>sprites\purpleball</sprite>
+    <sprite>sprites\walloutline</sprite>
+    <sprite>sprites\wallpurple</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\white_bg</background>
@@ -41,6 +44,9 @@
     <object>objects\obj_launcher</object>
     <object>objects\obj_movable_ball</object>
     <object>objects\obj_target</object>
+    <object>objects\obj_toggle_ball</object>
+    <object>objects\obj_wall_outline</object>
+    <object>objects\obj_purple_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\lvl14</room>
@@ -64,6 +70,11 @@
     <room>rooms\lvl13</room>
     <room>rooms\lvl15</room>
     <room>rooms\lvl16</room>
+    <room>rooms\lvl17</room>
+    <room>rooms\lvl18</room>
+    <room>rooms\lvl19</room>
+    <room>rooms\lvl20</room>
+    <room>rooms\lvl21</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

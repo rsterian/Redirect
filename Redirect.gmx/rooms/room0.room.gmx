@@ -369,6 +369,8 @@
     <instance objName="obj_black" x="976" y="720" name="inst_8AFFB00A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_black" x="992" y="720" name="inst_3645D508" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ball" x="672" y="608" name="inst_9FA695AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toggle_ball" x="832" y="608" name="inst_8DA2FD98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_toggle_ball" x="912" y="608" name="inst_E157FCAD" locked="0" code="on = false&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
