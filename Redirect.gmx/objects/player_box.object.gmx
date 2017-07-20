@@ -119,7 +119,6 @@ if(distance_to_object(obj_goal) &lt; 10){
     //key_right = keyboard_check(ord("D"));
     //key_left = -keyboard_check(ord("A"));
 
-
 //React to inputs
 //move = key_left + key_right;
 //hsp = move * movespeed;
@@ -140,7 +139,9 @@ x += hsp;
 //Vertical Collision
 if (place_meeting(x,y+vsp,obj_wall))
 {
-    in_air = false
+    if(vsp &gt;= 0){
+        in_air = false
+    }
     while(!place_meeting(x,y+sign(vsp),obj_wall))
     {
         y += sign(vsp);
@@ -150,100 +151,6 @@ if (place_meeting(x,y+vsp,obj_wall))
 y += vsp;
 
 //show_debug_message(grav)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="87">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(distance_to_object(obj_ball) &lt; 30){
-    //show_debug_message("hey")
-    inst = instance_nearest(x, y, obj_ball)
-    
-    if(object_get_name(inst.object_index) == "obj_blink_ball"){
-        if(!inst.targetable){
-            show_debug_message("untargetable!")
-            grav = base_grav
-            hovering = false
-            show_arrow = false
-            exit
-        }
-    }
-    
-    /*if(object_get_name(inst.object_index) == "obj_toggle_ball"){
-        if(!inst.on){
-            show_debug_message("untargetable!")
-            grav = base_grav
-            hovering = false
-            show_arrow = false
-            exit
-        }
-    }*/
-            
-    
-    if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
-        inst.is_held = true
-    }
-    
-    hovering = true
-    in_air = true
-    
-    x = inst.x - 8
-    y = inst.y - 8
-    
-    vsp = 0
-    hsp = 0
-    grav = 0
-    
-    show_arrow = true
-    if(object_get_name(inst.object_index) == "obj_movable_ball"){
-        show_back_arrow = true
-    }
-    
-} else {
-    hovering = false
-    show_arrow = false
-    show_back_arrow = false
-    grav = base_grav
-    
-    dist = 1
-    while(place_meeting(x,y,obj_wall)){
-        if(!place_meeting(x + dist, y, obj_wall)){
-            x += dist
-            break
-        }
-        if(!place_meeting(x - dist, y, obj_wall)){
-            x -= dist
-            break
-        }
-        if(!place_meeting(x, y + dist, obj_wall)){
-            y += dist
-            break
-        }
-        if(!place_meeting(x, y - dist, obj_wall)){
-            y -= dist
-            break
-        }
-        dist++
-    }
-}   
-//show_debug_message("far")
 </string>
           </argument>
         </arguments>
@@ -293,6 +200,119 @@ y += vsp;
             <kind>1</kind>
             <string>if(hsp &gt; (-1 * speed_cap)){
     hsp -= accel
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(in_air = false){
+    in_air = true
+    while(keyboard_check(vk_space) and timer &lt; time_max){
+        timer++
+        vsp += -1
+        if(vsp &lt; v_speed_cap){
+            break
+        }
+    }
+    
+    /*while(keyboard_check(vk_space) and jump_time &gt; 0){
+        vspeed = jump_time * 0.02
+        jump_time -= delta
+    }*/
+} else {
+    if(distance_to_object(obj_ball) &lt; 30){
+        //show_debug_message("hey")
+        inst = instance_nearest(x, y, obj_ball)
+        if(inst == noone){
+            exit
+        }
+        
+        if(object_get_name(inst.object_index) == "obj_blink_ball"){
+            if(!inst.targetable){
+                show_debug_message("untargetable!")
+                grav = base_grav
+                hovering = false
+                show_arrow = false
+                exit
+            }
+        }
+        
+        /*if(object_get_name(inst.object_index) == "obj_toggle_ball"){
+            if(!inst.on){
+                show_debug_message("untargetable!")
+                grav = base_grav
+                hovering = false
+                show_arrow = false
+                exit
+            }
+        }*/
+                
+        
+        if(object_get_name(inst.object_index) == "obj_bf_pause_ball"){
+            inst.is_held = true
+        }
+        
+        hovering = true
+        in_air = true
+        
+        x = inst.x - 8
+        y = inst.y - 8
+        
+        vsp = 0
+        hsp = 0
+        grav = 0
+        
+        show_arrow = true
+        if(object_get_name(inst.object_index) == "obj_movable_ball"){
+            show_back_arrow = true
+        }
+        
+    } else {
+        hovering = false
+        show_arrow = false
+        show_back_arrow = false
+        grav = base_grav
+        
+        dist = 1
+        while(place_meeting(x,y,obj_wall)){
+            if(!place_meeting(x + dist, y, obj_wall)){
+                x += dist
+                break
+            }
+            if(!place_meeting(x - dist, y, obj_wall)){
+                x -= dist
+                break
+            }
+            if(!place_meeting(x, y + dist, obj_wall)){
+                y += dist
+                break
+            }
+            if(!place_meeting(x, y - dist, obj_wall)){
+                y -= dist
+                break
+            }
+            dist++
+        }
+    }   
+    //show_debug_message("far")
 }
 </string>
           </argument>
@@ -423,7 +443,7 @@ if(show_back_arrow){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(in_air = false){
+            <string>/*if(in_air = false){
     in_air = true
     while(keyboard_check(vk_space) and timer &lt; time_max){
         timer++
@@ -433,11 +453,11 @@ if(show_back_arrow){
         }
     }
     
-    /*while(keyboard_check(vk_space) and jump_time &gt; 0){
-        vspeed = jump_time * 0.02
-        jump_time -= delta
-    }*/
-}
+    //while(keyboard_check(vk_space) and jump_time &gt; 0){
+    //    vspeed = jump_time * 0.02
+    //    jump_time -= delta
+    //}
+}*/
 
 
 </string>
@@ -461,7 +481,7 @@ if(show_back_arrow){
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="10" enumb="87">
+    <event eventtype="10" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -493,6 +513,12 @@ if(hovering){
     //speed = 15
     
     inst = instance_nearest(x, y, obj_ball)
+    if(inst == noone){
+        show_arrow = false
+        show_back_arrow = false
+        exit
+    }
+    
     if(object_get_name(inst.object_index) == "obj_movable_ball"){
         inst.direction = dir + 180
         inst.speed = 3
