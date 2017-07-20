@@ -51,6 +51,7 @@
     <object>objects\obj_wall_outline</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\lvl26</room>
     <room>rooms\lvl14</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
@@ -78,6 +79,8 @@
     <room>rooms\lvl20</room>
     <room>rooms\lvl21</room>
     <room>rooms\lvl22</room>
+    <room>rooms\lvl23</room>
+    <room>rooms\lvl25</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
