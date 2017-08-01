@@ -31,6 +31,9 @@ vsp = 0
 //SET THESE IN CREATION CODE
 
 is_held = false
+
+has_box_1 = false
+has_box_2 = false
 </string>
           </argument>
         </arguments>

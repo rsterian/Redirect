@@ -31,6 +31,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\player_box</object>
+    <object>objects\player_box_2</object>
     <object>objects\obj_wall</object>
     <object>objects\ground</object>
     <object>objects\obj_ball</object>
@@ -51,6 +52,12 @@
     <object>objects\obj_wall_outline</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\lvl27_dbl</room>
+    <room>rooms\lvl28_dbl</room>
+    <room>rooms\lvl29_dbl</room>
+    <room>rooms\lvl30_dbl</room>
+    <room>rooms\lvl31_dbl</room>
+    <room>rooms\lvl32_dbl</room>
     <room>rooms\lvl26</room>
     <room>rooms\lvl14</room>
     <room>rooms\room0</room>

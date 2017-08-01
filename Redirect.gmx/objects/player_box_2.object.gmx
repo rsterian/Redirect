@@ -136,9 +136,9 @@ if (place_meeting(x+hsp,y,obj_wall))
     }
     hsp = 0;
 }
-if (place_meeting(x+hsp,y,player_box_2))
+if (place_meeting(x+hsp,y,player_box))
 {
-    while(!place_meeting(x+sign(hsp),y,player_box_2))
+    while(!place_meeting(x+sign(hsp),y,player_box))
     {
         x += sign(hsp);
     }
@@ -151,7 +151,6 @@ if (place_meeting(x,y+vsp,obj_wall))
 {
     if(vsp &gt;= 0){
         in_air = false
-        //space_held = false
     }
     while(!place_meeting(x,y+sign(vsp),obj_wall))
     {
@@ -159,28 +158,26 @@ if (place_meeting(x,y+vsp,obj_wall))
     }
     vsp = 0;
 }
-if (place_meeting(x,y+vsp,player_box_2))
+if (place_meeting(x,y+vsp,player_box))
 {
     if(vsp &gt;= 0){
         in_air = false
-        //space_held = false
     }
-    while(!place_meeting(x,y+sign(vsp),player_box_2))
+    while(!place_meeting(x,y+sign(vsp),player_box))
     {
         y += sign(vsp);
     }
     vsp = 0;
 }
-
 y += vsp;
 
-//player_box collisions
+//player box collision
 //Horizontal Collision
 
 
 
-
 //Vertical Collision
+
 
 
 //show_debug_message(grav)
@@ -289,13 +286,12 @@ y += vsp;
             }
         }
         
-        if(inst.has_box_2){
+        if(inst.has_box_1){
             show_debug_message("busy")
             exit
         } 
             
-        inst.has_box_1 = true
-        
+        inst.has_box_2 = true
         
         /*if(object_get_name(inst.object_index) == "obj_toggle_ball"){
             if(!inst.on){
@@ -563,7 +559,7 @@ if(hovering){
         exit
     }
     
-    inst.has_box_1 = false
+    inst.has_box_2 = false
     
     if(object_get_name(inst.object_index) == "obj_movable_ball"){
         inst.direction = dir + 180

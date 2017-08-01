@@ -31,6 +31,9 @@ max_distance = 50
 default_speed = 1
 
 vspeed = -1 * default_speed
+
+has_box_1 = false
+has_box_2 = false
 </string>
           </argument>
         </arguments>
